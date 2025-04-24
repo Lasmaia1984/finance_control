@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Controle Financeiro</title>
+</head>
+<body>
+    <h1>Saldo bancário: R$ {{ saldo }}</h1>
+    <h2>Despesas</h2>
+    <ul>
+        {% for d in despesas %}
+        <li>{{ d.descricao }} - R$ {{ d.valor_total }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Receitas</h2>
+    <ul>
+        {% for r in receitas %}
+        <li>{{ r.cliente }} - R$ {{ r.valor_total }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/exportar">Exportar Excel</a>
+</body>
+</html>
